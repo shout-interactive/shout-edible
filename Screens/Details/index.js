@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, CardContent, Card, Typography, Link } from "@mui/material";
+import { Paper, CardContent, Card, Typography, Divider } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Form from "./Form";
-import HeaderStyle from "../../Components/SideNavHeader";
 
 const theme = createTheme({
   palette: {
@@ -25,37 +24,51 @@ const theme = createTheme({
 export default function Details() {
   return (
     <ThemeProvider theme={theme}>
-      <Box
+      <Paper
+        variant="outlined"
         sx={{
-          display: {
-            xs: "none",
-            md2: "flex",
-            desktop: "flex",
-            height: "40",
-            justifyContent: "center",
-            backgroundColor: "#110066",
-          },
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: 360,
+          backgroundColor: "rgba(17,0,102,.9)",
+          mt: 10,
+          px: 2,
+          py: 2,
         }}
       >
-        <Box
+        <Typography
           sx={{
-            position: "absolute",
-            top: 0,
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            height: "100vh",
+            fontSize: 24,
+            textAlign: "center",
+            mb: 1,
+            color: "white",
+            textTransform: "capitalize",
           }}
+          variant="body2"
         >
-          <Card variant="outlined" sx={{ mt: 0, width: 332 }}>
-            <CardContent>
-              <Form />
-            </CardContent>
-          </Card>
-        </Box>
-      </Box>
+          Your basic information
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: 14,
+            textAlign: "center",
+            mb: 1,
+            color: "white",
+          }}
+          variant="body2"
+        >
+          To claim your coupon, we need to get some basic information about you
+        </Typography>
+        <Divider
+          sx={{ color: "white", backgroundColor: "white", mt: 1, mb: 2 }}
+        />
+        <Card variant="outlined" sx={{ mt: 1, width: 330, mx: "auto" }}>
+          <CardContent>
+            <Form />
+          </CardContent>
+        </Card>
+      </Paper>
     </ThemeProvider>
   );
 }

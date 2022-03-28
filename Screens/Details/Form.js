@@ -33,28 +33,23 @@ const inputProps = {
 
 export default function Form() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowpassword] = useState(false);
+  const [fullname, setFullname] = useState("");
+  const [number, setNumber] = useState(false);
 
+  const handleChangeFullname = (e) => {
+    setFullname(e.target.value.trim());
+  };
   const handleChangeEmail = (e) => {
     setEmail(e.target.value.trim());
   };
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value.trim());
-  };
 
-  const handleClickShowPassword = () => {
-    setShowpassword(!showPassword);
+  const handleSetNumber = (e) => {
+    setNumber(e.target.value.trim());
   };
 
   return (
     <Container>
       <ContentStyle>
-        <Stack sx={{ mb: 5 }}>
-          <Typography sx={{ fontWeight: "700" }} variant="h6" gutterBottom>
-            Login to Shout Portal
-          </Typography>
-        </Stack>
         <FormControl>
           <Stack spacing={3}>
             <FormControl sx={{ fontWeight: "700" }} variant="standard">
@@ -62,8 +57,8 @@ export default function Form() {
 
               <TextField
                 id="fullname"
-                value={email}
-                onChange={handleChangeEmail}
+                value={fullname}
+                onChange={handleChangeFullname}
                 fullWidth
                 variant="outlined"
                 size="small"
@@ -89,13 +84,13 @@ export default function Form() {
             >
               <label htmlFor="phone">Phone Number</label>
 
-              {/* <MuiPhoneNumber
+              <MuiPhoneNumber
                 id="phone"
                 inputProps={inputProps}
                 defaultCountry={"ng"}
-                onChange={(phone) => console.log(phone)}
+                onChange={handleSetNumber}
                 // native
-              /> */}
+              />
             </FormControl>
           </Stack>
           <Button

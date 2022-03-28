@@ -19,7 +19,7 @@ export default function Home({ children }) {
         }}
       >
         <HeaderStyle>
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", mt: -2 }}>
             <Link href="/">
               <Typography
                 sx={{
