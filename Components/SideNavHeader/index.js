@@ -7,7 +7,7 @@ const HeaderStyle = styled("header")(({ theme }) => ({
   width: "100%",
   display: "flex",
   justifyContent: "end",
-  color: "#818FA3",
+  color: "white",
   position: "absolute",
   padding: theme.spacing(10, 3, 0, 7),
 }));

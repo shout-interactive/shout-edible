@@ -1,3 +1,5 @@
+import { useState } from "react";
+import Dynamic from "next/dynamic";
 import { styled } from "@mui/material/styles";
 import {
   FormControl,
@@ -6,11 +8,8 @@ import {
   Typography,
   TextField,
   Button,
-  Box,
 } from "@mui/material";
-import "./index.module.css";
-import { useState } from "react";
-import Dynamic from "next/dynamic";
+
 const MuiPhoneNumber = Dynamic(() => import("mui-phone-number"), {
   ssr: false,
 });
@@ -32,7 +31,7 @@ const inputProps = {
 
 // ----------------------------------------------------------------------
 
-export default function Login() {
+export default function Form() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowpassword] = useState(false);
@@ -90,13 +89,13 @@ export default function Login() {
             >
               <label htmlFor="phone">Phone Number</label>
 
-              <MuiPhoneNumber
+              {/* <MuiPhoneNumber
                 id="phone"
                 inputProps={inputProps}
                 defaultCountry={"ng"}
                 onChange={(phone) => console.log(phone)}
                 // native
-              />
+              /> */}
             </FormControl>
           </Stack>
           <Button
